@@ -1,0 +1,66 @@
+# Core dependencies
+aiohttp==3.9.1
+asyncio==3.4.3
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Google API clients
+google-auth==2.25.2
+google-api-python-client==2.111.0
+google-analytics-data==0.17.3
+
+# Web scraping and crawling
+selenium==4.16.0
+playwright==1.40.0
+scrapy==2.11.0
+
+# HTML/XML parsing
+html5lib==1.1
+cssselect==1.2.0
+
+# SEO and Web Analysis
+advertools==0.14.1
+sitemap-parser==0.1.1
+
+# Image processing
+Pillow==10.1.0
+
+# Data processing
+pandas==2.1.4
+numpy==1.26.2
+
+# URL and domain handling
+tldextract==5.1.1
+validators==0.22.0
+
+# HTTP and security
+python-whois==0.8.0
+pyOpenSSL==23.3.0
+
+# Content analysis
+textstat==0.7.3
+langdetect==1.0.9
+
+# API framework (optional)
+fastapi==0.108.0
+uvicorn==0.25.0
+pydantic==2.5.3
+
+# Database (optional)
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0.1
+jsonschema==4.20.0
+redis==5.0.1
+
+# Logging and monitoring
+sentry-sdk==1.39.1
