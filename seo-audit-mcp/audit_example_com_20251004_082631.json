@@ -1,0 +1,63 @@
+{
+  "domain": "example.com",
+  "timestamp": "2025-10-04T08:26:31.404136",
+  "modules": {
+    "onpage": {
+      "status": "success",
+      "title_tags": {
+        "total": 0,
+        "missing": 0,
+        "duplicate": 0,
+        "too_short": 0,
+        "too_long": 0
+      },
+      "meta_descriptions": {
+        "total": 0,
+        "missing": 0,
+        "duplicate": 0,
+        "too_short": 0,
+        "too_long": 0
+      },
+      "headings": {
+        "h1_missing": 0,
+        "multiple_h1": 0,
+        "incorrect_hierarchy": 0
+      },
+      "images": {
+        "total": 0,
+        "missing_alt": 0
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    "mobile": {
+      "status": "success",
+      "is_mobile_friendly": false,
+      "viewport_configured": false,
+      "text_readable": true,
+      "tap_targets_sized": true,
+      "content_fits_viewport": true,
+      "mobile_speed_score": 0,
+      "mobile_issues": [],
+      "issues": [],
+      "recommendations": []
+    },
+    "security": {
+      "status": "success",
+      "https_enabled": false,
+      "ssl_valid": false,
+      "ssl_expires": null,
+      "security_headers": {
+        "strict_transport_security": false,
+        "content_security_policy": false,
+        "x_frame_options": false,
+        "x_content_type_options": false,
+        "x_xss_protection": false
+      },
+      "mixed_content": [],
+      "vulnerabilities": [],
+      "issues": [],
+      "recommendations": []
+    }
+  }
+}
