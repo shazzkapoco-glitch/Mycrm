@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO API Example - Quick Demo</title>
+    <meta name="description" content="This is a demo page showing how to use the free SEO API integration for analyzing website SEO performance">
+    <meta name="author" content="SEO Team">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SEO API Example">
+    <meta property="og:description" content="Demo of free SEO API integration">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO API Example">
+    <meta name="twitter:description" content="Demo of free SEO API integration">
+    
+    <script src="/seo-api.js"></script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px 10px 10px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .button:active {
+            transform: translateY(0);
+        }
+        .feature-list {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .feature-list h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .feature-list ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+        code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .note {
+            background: #fffaf0;
+            border-left: 4px solid #f6ad55;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .note strong {
+            color: #c05621;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 SEO API Integration Demo</h1>
+        <p class="subtitle">Free SEO analysis tools powered by Google PageSpeed Insights API</p>
+        
+        <div class="feature-list">
+            <h3>✨ Features Available:</h3>
+            <ul>
+                <li><strong>Meta Tags Analysis</strong> - Validates title, description, Open Graph, Twitter Cards</li>
+                <li><strong>PageSpeed Insights</strong> - Performance, SEO, Accessibility, Best Practices scores</li>
+                <li><strong>Core Web Vitals</strong> - FCP, LCP, TBT, CLS metrics</li>
+                <li><strong>Structured Data</strong> - JSON-LD schema detection and validation</li>
+                <li><strong>SEO Recommendations</strong> - Actionable insights for improvement</li>
+            </ul>
+        </div>
+
+        <div style="margin: 30px 0;">
+            <h3>🚀 Try It Now:</h3>
+            <button class="button" onclick="showSEODashboard()">
+                📊 Show SEO Dashboard
+            </button>
+            <button class="button" onclick="checkSEO()">
+                📝 Console Report
+            </button>
+            <button class="button" onclick="demoMetaAnalysis()">
+                🏷️ Analyze Meta Tags
+            </button>
+        </div>
+
+        <div class="note">
+            <strong>💡 Pro Tip:</strong> Open your browser's Developer Console (F12) to see detailed SEO reports and use the API programmatically. Type <code>checkSEO()</code> to get started!
+        </div>
+
+        <div class="feature-list">
+            <h3>📖 Quick Commands:</h3>
+            <ul>
+                <li><code>checkSEO()</code> - Generate full SEO report</li>
+                <li><code>showSEODashboard()</code> - Display interactive dashboard</li>
+                <li><code>seoAnalyzer.analyzePageSpeed(url)</code> - Analyze any URL</li>
+                <li><code>seoAnalyzer.analyzeMetaTags()</code> - Get meta tags analysis</li>
+                <li><code>seoAnalyzer.checkStructuredData()</code> - Check JSON-LD schemas</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+            <p><strong>📚 Full Documentation:</strong> See <code>SEO_API_README.md</code> for complete API reference and examples.</p>
+        </div>
+    </div>
+
+    <script>
+        // Demo function to show meta analysis in alert
+        function demoMetaAnalysis() {
+            const analysis = seoAnalyzer.analyzeMetaTags();
+            const issues = analysis.validation.issues;
+            const recommendations = analysis.validation.recommendations;
+            
+            let message = '📊 SEO Meta Tags Analysis:\n\n';
+            message += `✅ Title: ${analysis.tags.title}\n`;
+            message += `   Length: ${analysis.tags.title.length} characters\n\n`;
+            message += `✅ Description: ${analysis.tags.description}\n`;
+            message += `   Length: ${analysis.tags.description.length} characters\n\n`;
+            
+            if (issues.length > 0) {
+                message += '⚠️ Issues:\n';
+                issues.forEach(issue => message += `   • ${issue}\n`);
+                message += '\n';
+            }
+            
+            if (recommendations.length > 0) {
+                message += '💡 Recommendations:\n';
+                recommendations.forEach(rec => message += `   • ${rec}\n`);
+            }
+            
+            if (issues.length === 0 && recommendations.length === 0) {
+                message += '✨ Great! Your meta tags are well optimized!';
+            }
+            
+            alert(message);
+            console.log('Full Analysis:', analysis);
+        }
+        
+        // Auto-show welcome message
+        console.log('%c🎉 Welcome to SEO API Demo!', 'color: #667eea; font-size: 20px; font-weight: bold;');
+        console.log('%cClick the buttons above or use these commands:', 'color: #666; font-size: 14px;');
+        console.log('  • checkSEO() - Full report');
+        console.log('  • showSEODashboard() - Interactive UI');
+        console.log('  • demoMetaAnalysis() - Quick meta analysis');
+    </script>
+</body>
+</html>
